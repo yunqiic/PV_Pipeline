@@ -2,7 +2,7 @@
 sudo docker run -ti --volume="$(pwd)":/DeepSolar --rm python:3.9 bash
 sudo docker run -ti --volume="$(pwd)":/DeepSolar --rm python:3.8 bash
 
-docker pull continuumio/anaconda3:2019.07
+sudo docker pull continuumio/anaconda3:2019.07
 sudo docker run -it --name="anaconda" -p 8888:8888 continuumio/anaconda3 /bin/bash
 sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 continuumio/anaconda3 /bin/bash
 sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 continuumio/anaconda3:2019.07 /bin/bash
