@@ -15,6 +15,18 @@ docker image ls
 
 docker run -it --name="anaconda_2" -p 8888:8888 -v `pwd`:/root continuumio/anaconda3 /bin/bash
 
+pip freeze > requirements.txt
+pip install -r requirements.txt
+ 
+conda install --file requirements.txt
+conda install --yes --file requirements.txt
+
+while read requirement; do conda install --yes $requirement; done < requirements.txt
+while read requirement; do conda install --yes $requirement || pip install $requirement; done < requirements.txt
+
+conda env export > freeze.yml
+conda env create -f freeze.yml
+
 # conda anaconda
 pip install -r requirements.txt -i https://pypi.douban.com/simple
 docker search anaconda
@@ -40,6 +52,10 @@ jupyter lab --ip='*' --port=8888 --no-browser --allow-root
 
 # 不想要了
 docker rm anaconda
+```
+
+```
+docker anaconda
 ```
 
 ```
