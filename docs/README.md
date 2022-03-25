@@ -9,6 +9,8 @@ sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:
 
 pip install -r requirements.txt -i https://pypi.douban.com/simple
 conda install --file requirements.txt
+conda install --yes --file requirements.txt
+while read requirement; do conda install --yes $requirement; done < requirements.txt
 
 conda install -c conda-forge jupyterlab
 cd ~
