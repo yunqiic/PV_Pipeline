@@ -54,19 +54,19 @@ krb5
 lcms2
 lerc
 libaec
-libblas
-libcblas
+# libblas
+# libcblas
 libcurl
-libcxx
+# libcxx
 libdap4
 libedit
 libev
 libffi
 libgdal
-libgfortran
+# libgfortran
 libiconv
 libkml
-liblapack
+# liblapack
 libnetcdf
 libnghttp2
 libopenblas
@@ -78,7 +78,7 @@ libtiff
 libwebp-base
 libxml2
 libzopfli
-llvm-openmp
+# llvm-openmp
 lz4-c
 matplotlib
 matplotlib-base
@@ -108,7 +108,7 @@ pyparsing
 pysocks
 python
 python-dateutil
-python_abi
+# python_abi
 pytorch
 pytz
 pywavelets
@@ -134,7 +134,7 @@ toolz
 torchvision
 tornado
 tqdm
-tzcode
+# tzcode
 urllib3
 wcwidth
 wheel
