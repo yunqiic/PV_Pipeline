@@ -2,6 +2,9 @@
 sudo docker run -ti --volume="$(pwd)":/DeepSolar --rm python:3.9 bash
 sudo docker run -ti --volume="$(pwd)":/DeepSolar --rm python:3.8 bash
 
+sudo docker run -it --name="anaconda" -p 8888:8888 continuumio/anaconda3 /bin/bash
+sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 continuumio/anaconda3 /bin/bash
+
 # conda anaconda
 pip install -r requirements.txt -i https://pypi.douban.com/simple
 docker search anaconda
