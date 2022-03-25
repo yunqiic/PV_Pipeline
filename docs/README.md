@@ -14,6 +14,17 @@ docker rm anaconda
 docker image ls
 
 docker run -it --name="anaconda_2" -p 8888:8888 -v `pwd`:/root continuumio/anaconda3 /bin/bash
+docker run -it -d --name [container-name] -p 8088:80 [image-name]
+docker stop container-name
+docker commit container-name  new-image-name
+docker run -it -d --name container-name -p p1:p1 -p p2:p2 new-image-name
+docker ps -a
+docker port 容器ID 或者 docker port 容器名称
+docker inspect f244 |grep Id
+# 进到/var/lib/docker/containers 目录下找到与 Id 相同的目录，修改 hostconfig.json 和 config.v2.json文件
+docker stop 容器ID
+systemctl stop docker
+systemctl start docker
 
 pip freeze > requirements.txt
 pip install -r requirements.txt
