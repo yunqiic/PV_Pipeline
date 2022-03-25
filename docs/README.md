@@ -22,7 +22,7 @@ docker commit -a "deepsolar" -m "deepsolar" fcdf0418d7e3 yiluxiangbei/anaconda3:
 docker push yiluxiangbei/anaconda3:deepsolar
 
 sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 yiluxiangbei/anaconda3:deepsolar /bin/bash
-
+cd DeepSolar
 python run_pipeline.py
 
 conda install -c conda-forge jupyterlab
