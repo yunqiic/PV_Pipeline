@@ -24,6 +24,8 @@ docker inspect f244 |grep Id
 # 进到/var/lib/docker/containers 目录下找到与 Id 相同的目录，修改 hostconfig.json 和 config.v2.json文件
 docker stop 容器ID
 systemctl stop docker
+# 修改hostconfig.json如下，添加端口绑定"9003/tcp": [{"HostIp": "","HostPort": "9003"}]，表示绑定端口9003
+# 修改config.v2.json在ExposedPorts中加上要暴露的端口，即9003
 systemctl start docker
 
 pip freeze > requirements.txt
