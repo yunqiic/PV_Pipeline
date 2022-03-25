@@ -5,10 +5,41 @@ sudo docker run -ti --volume="$(pwd)":/DeepSolar --rm python:3.8 bash
 sudo docker run -it --name="anaconda" -p 8888:8888 continuumio/anaconda3 /bin/bash
 sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 continuumio/anaconda3 /bin/bash
 
+conda install -c conda-forge jupyterlab
+cd ~
+jupyter lab --ip='*' --port=8888 --no-browser --allow-root
+docker start anaconda
+docker exec -it anaconda /bin/bash
+docker rm anaconda
+docker image ls
+
+docker run -it --name="anaconda_2" -p 8888:8888 -v `pwd`:/root continuumio/anaconda3 /bin/bash
+
 # conda anaconda
 pip install -r requirements.txt -i https://pypi.douban.com/simple
 docker search anaconda
 docker search conda
+```
+
+```shell
+# 头一次用
+docker run -it --name="anaconda" -p 8888:8888 continuumio/anaconda3 /bin/bash
+conda install -c conda-forge jupyterlab
+cd ~
+jupyter lab --ip='*' --port=8888 --no-browser --allow-root
+
+# 用完以后
+# Ctrl+C退出jupyter
+exit
+
+# 以后再用
+docker start anaconda
+docker exec -it anaconda /bin/bash
+cd ~
+jupyter lab --ip='*' --port=8888 --no-browser --allow-root
+
+# 不想要了
+docker rm anaconda
 ```
 
 ```
