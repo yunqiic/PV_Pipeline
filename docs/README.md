@@ -7,6 +7,9 @@ sudo docker run -it --name="anaconda" -p 8888:8888 continuumio/anaconda3 /bin/ba
 sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 continuumio/anaconda3 /bin/bash
 sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 continuumio/anaconda3:2019.07 /bin/bash
 
+pip install -r requirements.txt -i https://pypi.douban.com/simple
+conda install --file requirements.txt
+
 conda install -c conda-forge jupyterlab
 cd ~
 jupyter lab --ip='*' --port=8888 --no-browser --allow-root
