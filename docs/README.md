@@ -14,6 +14,9 @@ while read requirement; do conda install --yes $requirement; done < requirements
 
 python run_pipeline.py
 
+pip install shapely -i https://pypi.douban.com/simple
+pip install torch -i https://pypi.douban.com/simple
+
 conda install -c conda-forge jupyterlab
 cd ~
 jupyter lab --ip='*' --port=8888 --no-browser --allow-root
