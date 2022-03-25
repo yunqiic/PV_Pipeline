@@ -16,6 +16,14 @@ python run_pipeline.py
 
 pip install shapely -i https://pypi.douban.com/simple
 pip install torch -i https://pypi.douban.com/simple
+pip install torchvision -i https://pypi.douban.com/simple
+
+docker commit -a "deepsolar" -m "deepsolar" fcdf0418d7e3 yiluxiangbei/anaconda3:deepsolar
+docker push yiluxiangbei/anaconda3:deepsolar
+
+sudo docker run -it --name="anaconda" --volume="$(pwd)":/DeepSolar --rm -p 8888:8888 yiluxiangbei/anaconda3:deepsolar /bin/bash
+
+python run_pipeline.py
 
 conda install -c conda-forge jupyterlab
 cd ~
