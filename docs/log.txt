@@ -1,0 +1,38 @@
+pip install -r requirements.txt -i https://pypi.douban.com/simple
+Looking in indexes: https://pypi.douban.com/simple
+Collecting affine
+  Using cached https://pypi.doubanio.com/packages/ac/a6/1a39a1ede71210e3ddaf623982b06ecfc5c5c03741ae659073159184cd3e/affine-2.3.0-py2.py3-none-any.whl (15 kB)
+Requirement already satisfied: attrs in /opt/conda/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (21.2.0)
+ERROR: Could not find a version that satisfies the requirement backports (from versions: none)
+ERROR: No matching distribution found for backports
+
+conda install --file requirements.txt
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - python_abi
+  - libcblas
+  - libblas
+  - libgfortran
+  - llvm-openmp
+  - liblapack
+  - tzcode
+  - libcxx
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/linux-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/linux-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
