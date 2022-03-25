@@ -31,6 +31,9 @@ conda env create -f freeze.yml
 pip install -r requirements.txt -i https://pypi.douban.com/simple
 docker search anaconda
 docker search conda
+
+# https://mirrors.aliyun.com/anaconda/
+# https://mirrors.aliyun.com/anaconda/miniconda/
 ```
 
 ```shell
