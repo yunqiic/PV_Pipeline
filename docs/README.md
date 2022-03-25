@@ -12,6 +12,8 @@ conda install --file requirements.txt
 conda install --yes --file requirements.txt
 while read requirement; do conda install --yes $requirement; done < requirements.txt
 
+python run_pipeline.py
+
 conda install -c conda-forge jupyterlab
 cd ~
 jupyter lab --ip='*' --port=8888 --no-browser --allow-root
